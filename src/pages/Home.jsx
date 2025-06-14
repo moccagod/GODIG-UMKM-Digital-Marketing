@@ -229,35 +229,40 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimoni */}
-      <section className="py-16 px-4 bg-green-50">
-        <h2 className="text-3xl font-bold text-center text-green-700 mb-10">
+      {/* Testimoni Modern */}
+      <section className="py-20 px-4 bg-green-50">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-green-700 mb-12">
           Apa Kata Mereka Tentang GODIG?
         </h2>
+
         <Swiper
           modules={[Autoplay]}
-          spaceBetween={20}
+          spaceBetween={24}
           slidesPerView="auto"
           loop={true}
           freeMode={true}
           autoplay={{
-            delay: 2,
+            delay: 1,
             disableOnInteraction: false,
           }}
-          speed={3000} // Semakin tinggi, semakin halus
+          speed={3000}
           grabCursor={true}
           className="cursor-grab"
         >
           {testimonies.map((item, idx) => (
-            <SwiperSlide key={idx} style={{ width: "300px" }}>
-              <div className="bg-white border rounded-xl p-6 shadow h-full flex flex-col justify-between">
-                <div className="flex gap-2 items-start mb-2 text-green-500">
-                  <Quote />
-                  <p className="text-sm text-left text-gray-700 italic">
+            <SwiperSlide
+              key={idx}
+              style={{ width: "320px" }}
+              className="rounded-xl bg-gradient-to-br from-white to-green-50 shadow transition-shadow duration-300"
+            >
+              <div className="h-full flex flex-col justify-between p-6">
+                <div className="flex gap-3 items-start text-green-500 mb-4">
+                  <Quote size={20} />
+                  <p className="text-sm text-gray-700 italic leading-relaxed">
                     {item.text}
                   </p>
                 </div>
-                <p className="text-sm font-semibold text-green-700 text-right mt-4">
+                <p className="text-sm font-medium text-green-700 text-right mt-6">
                   — {item.name}
                 </p>
               </div>
@@ -266,20 +271,24 @@ const Home = () => {
         </Swiper>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 px-4 bg-green-600 text-white text-center">
+      {/* CTA Modern */}
+      <section className="py-20 px-6 bg-gradient-to-r from-green-600 to-green-500 text-white">
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl mx-auto text-center"
         >
-          <h2 className="text-3xl font-bold mb-4">
+          <h2 className="text-4xl md:text-4xl font-extrabold mb-6 leading-tight">
             Siap Bawa Bisnismu ke Dunia Digital?
           </h2>
-          <p className="mb-6">GODIG siap bantu kamu mulai dari sekarang!</p>
+          <p className="text-lg md:text-xl mb-8 text-white/90">
+            Kami di <span className="font-semibold">GODIG</span> siap membantu
+            kamu mulai dari sekarang — dari konten, strategi, hingga iklan!
+          </p>
           <Link
             to="/kontak"
-            className="bg-white text-green-700 px-6 py-3 rounded-lg font-semibold hover:bg-green-100 transition"
+            className="inline-block bg-white text-green-700 hover:text-white hover:bg-green-700 px-8 py-3 rounded-full font-semibold shadow-lg transition duration-300"
           >
             Hubungi Sekarang
           </Link>
