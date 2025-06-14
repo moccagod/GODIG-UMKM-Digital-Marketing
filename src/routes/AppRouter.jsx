@@ -18,7 +18,7 @@ import ManageServices from "../pages/admin/ManageServices";
 import ManageContacts from "../pages/admin/ManageContacts";
 import AddArticles from "../pages/admin/AddArticles";
 import DetailArticles from "../pages/admin/DetailArticles";
-import Thanks from "../pages/thanks";
+import Thanks from "../pages/Thanks";
 
 const AppRouter = () => {
   const location = useLocation();
