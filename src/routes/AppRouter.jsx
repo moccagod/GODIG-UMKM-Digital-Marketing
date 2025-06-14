@@ -1,6 +1,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
+
 // Import pages
 import Home from "../pages/Home";
 import About from "../pages/About";
@@ -26,14 +27,17 @@ const AppRouter = () => {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
+        
         {/* Public Routes */}
         <Route path="/" element={<Home />} />
         <Route path="/tentang" element={<About />} />
         <Route path="/layanan" element={<Services />} />
         <Route path="/artikel" element={<Blog />} />
-        <Route path="/artikel/:slug" element={<BlogDetail />} />
+        <Route path="/artikel/:id" element={<BlogDetail />} />
         <Route path="/kontak" element={<Contact />} />
         <Route path="/thanks" element={<Thanks />} />
+
+        
 
         {/* Admin Routes */}
         <Route path="/admin" element={<AdminLogin />} />

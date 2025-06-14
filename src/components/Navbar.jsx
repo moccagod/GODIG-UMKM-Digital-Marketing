@@ -23,7 +23,7 @@ const Navbar = () => {
 
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div className="max-w-6xl mx-auto px-4 py-5 md:py-3 flex justify-between items-center">
         <Link
           to="/"
           className="flex items-center gap-2 text-2xl font-bold text-green-600"
@@ -47,12 +47,6 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          <Link
-            to="/admin"
-            className="text-sm bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg"
-          >
-            Admin
-          </Link>
         </nav>
 
         {/* Mobile Nav */}
@@ -73,7 +67,7 @@ const Navbar = () => {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.2 }}
           >
-            <div className="px-4 py-2 space-y-2">
+            <div className="px-4 py-2 pb-5 space-y-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
@@ -84,13 +78,6 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
-              <Link
-                to="/admin"
-                onClick={() => setMenuOpen(false)}
-                className="block text-sm bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg"
-              >
-                Admin
-              </Link>
             </div>
           </motion.div>
         )}

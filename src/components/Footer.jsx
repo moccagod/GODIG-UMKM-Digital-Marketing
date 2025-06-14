@@ -72,7 +72,7 @@ const Footer = () => {
       </div>
 
       <div className="border-t border-green-200 py-4 text-center text-sm text-gray-600">
-        © {new Date().getFullYear()} GODIG. All rights reserved.
+        © {new Date().getFullYear()} GODIG. Make with ❤️ by <a href="https://moccagod.github.io/portofolio/" target="_blank">Azmi Nailal Hadi</a>.
       </div>
     </footer>
   );
