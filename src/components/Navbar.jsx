@@ -24,7 +24,15 @@ const Navbar = () => {
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold text-green-600">
+        <Link
+          to="/"
+          className="flex items-center gap-2 text-2xl font-bold text-green-600"
+        >
+          <img
+            src="/images/logo.png"
+            alt="GODIG Logo"
+            className="w-8 h-8 object-contain"
+          />
           GODIG
         </Link>
 

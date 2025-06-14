@@ -92,25 +92,26 @@ const Home = () => {
       {/* Hero Section */}
       <div className="py-20 px-4">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-          {/* Gambar / Ilustrasi */}
+          {/* Gambar / Ilustrasi (Mobile: atas, Desktop: kanan) */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
+            className="order-1 md:order-2"
           >
             <img
-              src="/images/hero.png" // ganti dengan gambar relevan
+              src="/images/hero.png"
               alt="Digital Marketing Illustration"
               className="w-full max-w-md mx-auto md:mx-0"
             />
           </motion.div>
 
-          {/* Konten Teks */}
+          {/* Konten Teks (Mobile: bawah, Desktop: kiri) */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center md:text-left"
+            className="order-2 md:order-1 text-center md:text-left"
           >
             <h1 className="text-4xl md:text-5xl font-bold text-green-700 leading-tight">
               Digital Marketing untuk UMKM yang Siap Naik Kelas
@@ -121,13 +122,13 @@ const Home = () => {
             </p>
             <div className="mt-6 flex flex-col md:flex-row gap-4 justify-center md:justify-start">
               <Link
-                to="/services"
+                to="/layanan"
                 className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition text-center"
               >
                 Lihat Layanan
               </Link>
               <Link
-                to="/contact"
+                to="/kontak"
                 className="border border-green-600 text-green-700 px-6 py-3 rounded-lg hover:bg-green-50 transition text-center"
               >
                 Hubungi Kami
@@ -139,15 +140,39 @@ const Home = () => {
 
       {/* Tentang Kami */}
       <section className="py-16 px-4 bg-white">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-green-700 mb-4">
-            Siapa Kami?
-          </h2>
-          <p className="text-gray-700 text-md md:text-lg">
-            GODIG (Go Digital) adalah tim digital marketing yang berfokus
-            membantu UMKM berkembang melalui media sosial, konten kreatif, dan
-            iklan online.
-          </p>
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
+          {/* Kiri: Gambar dengan animasi dari kiri */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="md:w-1/2"
+          >
+            <img
+              src="/images/logo.png" // Ganti sesuai nama file kamu
+              alt="Tentang Kami"
+              className="w-1/2 md:w-full h-auto justify-center mx-auto"
+            />
+          </motion.div>
+
+          {/* Kanan: Teks dengan animasi dari kanan */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="md:w-1/2"
+          >
+            <h2 className="text-center md:text-start text-4xl font-bold text-green-700 mb-4">
+              Siapa Kami?
+            </h2>
+            <p className="text-center md:text-start text-gray-700 text-md md:text-lg">
+              GODIG (Go Digital) adalah tim digital marketing yang berfokus
+              membantu UMKM berkembang melalui media sosial, konten kreatif, dan
+              iklan online.
+            </p>
+          </motion.div>
         </div>
       </section>
 
